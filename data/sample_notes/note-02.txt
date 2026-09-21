@@ -1,0 +1,23 @@
+SYNTHETIC CLINICAL NOTE - FICTIONAL PATIENT, GENERATED FOR TESTING ONLY.
+
+Patient: Morgan Reyes (fictional). MRN: SYN-0002-TEST.
+Date: 2026-02-03.
+
+Chief Complaint: Shortness of breath on exertion.
+
+History of Present Illness: A 67-year-old with a history of congestive heart
+failure with reduced ejection fraction (EF 35% on last echocardiogram,
+2025-11-10) presents with worsening dyspnea on exertion over the past week,
+now occurring after climbing one flight of stairs. Reports 4-pound weight
+gain and bilateral ankle swelling. Denies orthopnea or paroxysmal nocturnal
+dyspnea. Currently on carvedilol 12.5mg twice daily and furosemide 40mg
+daily.
+
+Past Medical History: Ischemic cardiomyopathy status post myocardial
+infarction in 2021. Atrial fibrillation on apixaban 5mg twice daily.
+
+Assessment: Acute decompensated heart failure, likely volume overload.
+
+Plan: Increase furosemide to 80mg daily. Obtain BNP and basic metabolic
+panel. Daily weights. Follow-up in cardiology clinic in 3 days or sooner if
+symptoms worsen.

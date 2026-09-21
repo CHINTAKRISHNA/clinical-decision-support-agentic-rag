@@ -1,0 +1,22 @@
+SYNTHETIC CLINICAL NOTE - FICTIONAL PATIENT, GENERATED FOR TESTING ONLY.
+
+Patient: Casey Nakamura (fictional). MRN: SYN-0003-TEST.
+Date: 2026-01-29.
+
+Chief Complaint: Routine diabetes follow-up.
+
+History of Present Illness: A 45-year-old with type 2 diabetes mellitus
+diagnosed in 2018 presents for routine follow-up. Reports good adherence to
+metformin 500mg twice daily and glargine 20 units at bedtime. Home glucose
+logs show fasting readings between 110-140 mg/dL. No episodes of
+hypoglycemia. Denies polyuria, polydipsia, or blurred vision. Last HbA1c
+three months ago was 7.8%.
+
+Past Medical History: Hyperlipidemia on atorvastatin 20mg daily. No known
+drug allergies.
+
+Assessment: Type 2 diabetes mellitus, improved but not yet at goal (HbA1c
+target <7.0%).
+
+Plan: Add empagliflozin 10mg daily. Repeat HbA1c in 3 months. Reinforce
+dietary counseling and continue current statin therapy.

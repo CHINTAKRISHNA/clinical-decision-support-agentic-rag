@@ -1,0 +1,21 @@
+SYNTHETIC CLINICAL NOTE - FICTIONAL PATIENT, GENERATED FOR TESTING ONLY.
+
+Patient: Jordan Ellis (fictional). MRN: SYN-0001-TEST.
+Date: 2026-01-14.
+
+Chief Complaint: Follow-up for hypertension management.
+
+History of Present Illness: The patient is a 58-year-old with a history of
+essential hypertension diagnosed five years ago, currently managed with
+lisinopril 20mg daily. The patient reports occasional headaches in the
+morning but denies chest pain, shortness of breath, or dizziness. Home blood
+pressure readings have averaged 148/92 over the past two weeks.
+
+Past Medical History: Type 2 diabetes mellitus, diagnosed 2019, managed with
+metformin 1000mg twice daily. No known drug allergies.
+
+Assessment: Hypertension, suboptimally controlled on current regimen.
+
+Plan: Increase lisinopril to 40mg daily. Continue metformin. Recheck blood
+pressure and basic metabolic panel in four weeks. Counseled patient on
+sodium restriction and home BP monitoring.
