@@ -34,14 +34,19 @@ class MockLLM:
 
 
 class AnthropicLLM:
-    def __init__(self) -> None:
+    def __init__(self, api_key: str | None = None, model: str | None = None) -> None:
         from langchain_anthropic import ChatAnthropic
 
-        self._client = ChatAnthropic(model=settings.anthropic_model, api_key=settings.anthropic_api_key)
+        self._client = ChatAnthropic(
+            model=model or settings.anthropic_model,
+            api_key=api_key or settings.anthropic_api_key,
+        )
 
     def generate(self, prompt: str) -> str:
-        response = self._client.invoke(prompt)
-        return response.content
+        content = self._client.invoke(prompt).content
+        if isinstance(content, list):  # content blocks -> plain text
+            return "".join(b.get("text", "") if isinstance(b, dict) else str(b) for b in content)
+        return content
 
 
 def get_llm() -> LLM:

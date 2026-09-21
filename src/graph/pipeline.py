@@ -26,6 +26,7 @@ from langgraph.graph import END, StateGraph
 from src.agents.redaction_agent import redact_input, redact_output
 from src.agents.retrieval_agent import build_retrieval_node
 from src.agents.verification_agent import verify
+from src.llm import LLM
 from src.data.loader import load_notes
 from src.retrieval.hybrid_search import HybridSearcher
 from src.retrieval.vector_store import VectorStore
@@ -43,10 +44,10 @@ class PipelineState(TypedDict, total=False):
     redacted_answer: str
 
 
-def build_pipeline(searcher: HybridSearcher):
+def build_pipeline(searcher: HybridSearcher, llm: LLM | None = None):
     graph = StateGraph(PipelineState)
     graph.add_node("redact_input", redact_input)
-    graph.add_node("retrieve", build_retrieval_node(searcher))
+    graph.add_node("retrieve", build_retrieval_node(searcher, llm))
     graph.add_node("verify", verify)
     graph.add_node("redact_output", redact_output)
 
@@ -59,11 +60,11 @@ def build_pipeline(searcher: HybridSearcher):
     return graph.compile()
 
 
-def default_pipeline():
+def default_pipeline(llm: LLM | None = None):
     """Builds a pipeline over the bundled synthetic sample notes, ingesting
     them into Qdrant on first use."""
     chunks = load_notes()
     store = VectorStore()
     store.upsert_chunks(chunks)
     searcher = HybridSearcher(vector_store=store, chunks=chunks)
-    return build_pipeline(searcher)
+    return build_pipeline(searcher, llm)

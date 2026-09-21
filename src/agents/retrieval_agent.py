@@ -6,7 +6,7 @@ from __future__ import annotations
 from typing import Any
 
 from src.guardrails.prompt_injection import scan
-from src.llm import get_llm
+from src.llm import LLM, get_llm
 from src.retrieval.hybrid_search import HybridSearcher
 from src.retrieval.reranker import Reranker
 
@@ -26,7 +26,9 @@ Question: {question}
 Answer:"""
 
 
-def build_retrieval_node(searcher: HybridSearcher):
+def build_retrieval_node(searcher: HybridSearcher, llm: LLM | None = None):
+    generator = llm or _llm
+
     def retrieve(state: dict[str, Any]) -> dict[str, Any]:
         query = state.get("redacted_query") or state["query"]
 
@@ -48,7 +50,7 @@ def build_retrieval_node(searcher: HybridSearcher):
         context_block = "\n".join(f"- [{c.chunk_id}] {c.text}" for c in safe_chunks)
 
         prompt = PROMPT_TEMPLATE.format(context=context_block, question=query)
-        answer = _llm.generate(prompt)
+        answer = generator.generate(prompt)
 
         return {
             "retrieved_chunks": [c.chunk_id for c in safe_chunks],
